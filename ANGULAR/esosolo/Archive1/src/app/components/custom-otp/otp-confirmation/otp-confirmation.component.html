@@ -1,0 +1,65 @@
+<app-modal-wrapper
+  [wrapperCanShowModal]="showModalBackground"
+  [wrapperCanCloseModalByBackDrop]="true"
+  [wrapperShowModalCloseButton]="true"
+  wrapperModalTitle="Verification"
+  wrapperModalSubtitle=" We have sent a code to  otpContact. Enter the code to proceed"
+  [showModalFooter]="false"
+  (emitModalClosed)="resetModalBackDrop($event)"
+>
+  <div class="otp-inputs-wrapper">
+    <app-form-input size="rounded" iconAlignment="none">
+      <input
+        class="formInput"
+        type="text"
+        maxlength="1"
+        #codeOne
+        [formControl]="otpCodeOne"
+      />
+    </app-form-input>
+
+    <app-form-input size="rounded" iconAlignment="none">
+      <input
+        class="formInput"
+        type="text"
+        maxlength="1"
+        #codeTwo
+        [formControl]="otpCodeTwo"
+      />
+    </app-form-input>
+
+    <app-form-input size="rounded" iconAlignment="none">
+      <input
+        class="formInput"
+        type="text"
+        maxlength="1"
+        #codeThree
+        [formControl]="otpCodeThree"
+      />
+    </app-form-input>
+
+    <app-form-input size="rounded" iconAlignment="none">
+      <input
+        class="formInput"
+        type="text"
+        maxlength="1"
+        #codeFour
+        [formControl]="otpCodeFour"
+      />
+    </app-form-input>
+
+    <app-form-input size="rounded" iconAlignment="none">
+      <input
+        class="formInput"
+        type="text"
+        maxlength="1"
+        #codeFive
+        [formControl]="otpCodeFive"
+      />
+    </app-form-input>
+  </div>
+
+  <app-card-row rowDisplay="column">
+    <button (click)="confirmOtp()" class="formButton">Verify OTP</button>
+  </app-card-row>
+</app-modal-wrapper>

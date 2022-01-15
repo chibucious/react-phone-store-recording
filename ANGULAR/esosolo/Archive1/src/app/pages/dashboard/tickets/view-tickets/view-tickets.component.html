@@ -1,0 +1,472 @@
+<page-content-wrapper>
+        <page-section-wrapper display="column">
+        
+            <!--//////////////////////////////////////// Base Content ///////////////////////////////////-->
+    
+            <!-- Header Section containing search, menu and ada ticket btn -->
+            <section-header>
+                <app-form-input
+                    formInputIcon="../../../assets/icons/Iconly/Light-Outline/Search.svg"
+                    iconAlignment="left"
+                >
+                <input
+                    class="formInput"
+                    type="text"
+                    placeholder="Search"
+                    [formControl]="searchbarInput"
+                    (change)="(searchbarSubmitFunction)"
+                />
+                </app-form-input>
+    
+                <div class="section-content-two">
+                    <span class="section-menu-wrapper">
+                    <div
+                        (click)="toogleMenuState(false)"
+                        class="menu-icon {{ !isGrid && 'active' }}"
+                    >
+                        <img
+                        class=""
+                        src="../../../../../assets/icons/Iconly/Light/Category.svg"
+                        />
+                    </div>
+    
+                    <div
+                        (click)="toogleMenuState(true)"
+                        class="menu-icon {{ isGrid && 'active' }}"
+                    >
+                        <img
+                        class=""
+                        src="../../../../../assets/icons/custom-icons/hamburger-open.svg"
+                        />
+                    </div>
+                    </span>
+    
+                    <button class="formButton">New ticket</button>
+                </div>
+            </section-header>
+            <!-- Header Section containing search, menu and ada ticket btn -->
+    
+    
+            
+            <div class="content-wrapper">
+                <!-- Different dropdowns to help in searching -->
+                <div class="content-section one">
+                    <!-- First Row Begins -->
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info">Company </span>
+                        </span>
+                        <span class="content-icon">
+                            <img
+                            src="../../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            />
+                        </span>
+                    </div>
+    
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info">Label</span>
+                        </span>
+                        <span class="content-icon">
+                            <img
+                            src="../../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            />
+                        </span>
+                    </div>
+    
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info">Priority</span>
+                        </span>
+                        <span class="content-icon">
+                            <img
+                            src="../../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            />
+                        </span>
+                    </div>
+    
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info"> Status </span>
+                        </span>
+                        <span class="content-icon">
+                            <img
+                            src="../../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            />
+                        </span>
+                    </div>
+                    <!-- First Row Ends -->
+    
+                    <!-- Second Row Begins -->
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info">Date created </span>
+                        </span>
+                        <span class="content-icon">
+                            <img src="../../../../../../assets/icons/Iconly/Light/Calendar.svg" />
+                        </span>
+                    </div>
+    
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info">Due date</span>
+                        </span>
+                        <span class="content-icon">
+                            <img src="../../../../../../assets/icons/Iconly/Light/Calendar.svg" />
+                        </span>
+                    </div>
+    
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info">Group</span>
+                        </span>
+                        <span class="content-icon">
+                            <img
+                            src="../../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            />
+                        </span>
+                    </div>
+    
+                    <div class="content-box">
+                        <span class="content">
+                            <span class="content-info"> Type </span>
+                        </span>
+                        <span class="content-icon">
+                            <img
+                            src="../../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            />
+                        </span>
+                    </div>
+                    <!-- Second Row Ends -->
+    
+                <!-- Different dropdowns to help in searching -->
+                </div>
+                
+                
+                
+                
+                <!-- Table -->
+                <div  style="margin-top:20px;width:1050px;overflow: auto;">
+                <page-section-wrapper *ngIf="!isGrid" display="column">
+                    <div class="table-header">
+                        <span class="table-content checkbox">
+                        <img
+                            src="../../../../../assets/icons/Iconly/Two-tone/Tick Square.svg"
+                            alt=""
+                        />
+                        </span>
+                
+                        <span class="table-content company-name">
+                        Creator
+                
+                        <img
+                            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+                            alt=""
+                        />
+                        </span>
+                
+                        <span class="table-content company-name">
+                        ID
+                
+                        <img
+                            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+                            alt=""
+                        />
+                        </span>
+                
+                        <span class="table-content company-name">
+                        Subject
+                
+                        <img
+                            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+                            alt=""
+                        />
+                        </span>
+                        
+                        <span class="table-content company-name">
+                            Assignees
+                
+                            <img
+                            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+                            alt=""
+                            />
+                        </span>
+                
+                        <span class="table-content company-name">
+                            Date Created
+                
+                            <img
+                            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+                            alt=""
+                            />
+                        </span>
+    
+                        <span class="table-content company-priority"> Priority </span>
+                
+                        <span class="table-content company-status"> Status </span>
+                
+                        <span class="table-content company-action"> Action </span>
+                    </div>
+                
+                    <div *ngFor="let ticketholder of ticketholderList" class="table-row">
+                        <span class="table-content checkbox">
+                        <img
+                            src="../../../../../assets/icons/Iconly/Two-tone/Tick Square.svg"
+                            alt=""
+                        />
+                        </span>
+                
+                        <span class="table-content ticketholder-name">
+                            <img src="{{ ticketholder.icon }}" alt=""/>
+                            {{ ticketholder.name }}
+                        </span>
+                
+                        <span class="table-content ticketholder-id">
+                            {{ ticketholder.userid }}
+                        </span>
+                
+                        <span class="table-content ticketholder-company">{{ ticketholder.subject }}</span>
+                
+                        <span class="table-content ticketholder-assignees sidebyside-img">
+                            <span class="sideimg1"><img src="{{ ticketholder.assinees1 }}" alt=""/></span>
+                            <span class="sideimg2"><img src="{{ ticketholder.assinees2 }}" alt=""/></span>
+                            <span class="sideimg3"><img src="{{ ticketholder.assinees3 }}" alt=""/></span>
+                        </span>
+                
+                        <span class="table-content ticketholder-lastActivity">{{
+                        ticketholder.activity
+                        }}</span>
+                
+                        <span
+                        class="table-content ticketholder-lastActivity company-status {{
+                            ticketholder.status && 'active-status'
+                        }}"
+                        >{{ ticketholder.priority }}</span
+                        >
+
+                        <span
+                        class="table-content company-status {{
+                            ticketholder.status && 'active-status'
+                        }}"
+                        >{{ ticketholder.status }}</span
+                        >
+                
+                        <span
+                        (click)="selectTicketholder(ticketholder)"
+                        class="table-content company-action"
+                        >
+                        <img
+                            src="../../../../../assets/icons/custom-icons/menudot.svg"
+                            alt=""
+                        />
+                        </span>
+                    </div>
+                    </page-section-wrapper>
+                    </div>
+                
+                    <page-section-wrapper>
+                    <div class="pagination-section list">
+                        <div class="pagination-sections-wrapper">
+                        <span class="pagination-section">
+                            <p class="pagination-legend">Showing</p>
+                            <p class="pagination-title">1</p>
+                            <p class="pagination-title">-</p>
+                            <p class="pagination-title">10</p>
+                            <p class="pagination-legend">of</p>
+                            <p class="pagination-title">10</p>
+                            <p class="pagination-legend">results</p>
+                        </span>
+                        </div>
+                
+                        <div class="pagination-sections-wrapper">
+                        <span class="pagination-section center">
+                            <img
+                            class="pagination-icon"
+                            src="../../../../../assets/icons/Iconly/Light/Arrow - Left 2.svg"
+                            alt=""
+                            />
+                            <p class="pagination-title">PREVIOUS</p>
+                            <p class="pagination-title">1</p>
+                            <p class="pagination-legend">of</p>
+                            <p class="pagination-title">10</p>
+                            <p class="pagination-title">NEXT</p>
+                            <img
+                            class="pagination-icon"
+                            src="../../../../../assets/icons/Iconly/Light/Arrow - Right 2.svg"
+                            alt=""
+                            />
+                        </span>
+                        </div>
+                
+                        <div class="pagination-sections-wrapper">
+                        <span class="pagination-section end">
+                            <p class="pagination-legend">Results per page:</p>
+                            <p class="pagination-title">8</p>
+                            <img
+                            class="pagination-icon"
+                            src="../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+                            alt=""
+                            />
+                        </span>
+                        </div>
+                    </div>
+                    </page-section-wrapper>
+                <!-- Table -->
+    
+    
+    
+    
+            </div>
+    
+    
+            <!--//////////////////////////////////////// Base Content Ends ///////////////////////////////////-->
+    
+      </page-section-wrapper>
+    </page-content-wrapper>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- ///////////////////////////////////// VIEWMESSAGE TICKET //////////////////////////////////// -->
+    <page-content-wrapper style="display:none;">
+        <page-section-wrapper display="column">
+        
+            <!--//////////////////////////////////////// Base Content ///////////////////////////////////-->
+    
+            <!-- Header Section containing search, menu and ada ticket btn -->
+            <section-header>
+                <span>
+                    <img class="" src="../../../../../assets/icons/Iconly/Light/Arrow - Left.svg" style="margin-top:10px;"/>
+                    #20796
+                </span>
+                
+        
+                <div class="section-content-two">
+                    <span class="section-menu-wrapper">
+                    <div
+                        (click)="toogleMenuState(false)"
+                        class="menu-icon1 {{ !isGrid && 'active' }}"
+                    >
+                        <img
+                        class=""
+                        src="../../../../../assets/icons/custom-icons/Play.svg"
+                        />
+                    </div>
+    
+                    <div
+                        (click)="toogleMenuState(true)"
+                        class="menu-icon1 {{ isGrid && 'active' }}"
+                    >
+                        <img
+                        class=""
+                        src="../../../../../assets/icons/custom-icons/Close Square.svg"
+                        />
+                    </div>
+                    </span>
+                </div>
+            </section-header>
+            <!-- Header Section containing search, menu and ada ticket btn -->
+        
+            <div class="">
+                Status of airtime top-up still pending. Have already been debited.
+            </div>
+                
+            <div class="messageitems">
+                <span>Jessica Wong</span> &nbsp;&nbsp;
+                <span class="lightash-color">
+                    <img class="" src="../../../../../assets/icons/custom-icons/Ellipse 23.svg"/> &nbsp;&nbsp;
+                    Mar 20, 2019 23:14 &nbsp;&nbsp;
+                </span>
+                <span class="lightash-color">
+                    <img class="" src="../../../../../assets/icons/custom-icons/Ellipse 23.svg"/> &nbsp;&nbsp;
+                    <span class="ash-border">Help and Support</span> &nbsp;&nbsp;
+                    <img class="" src="../../../../../assets/icons/custom-icons/Ellipse 23.svg"/> &nbsp;&nbsp;
+                </span>
+                <span style="color:red;">Open for 25 days</span>
+            </div>
+    
+    
+            <!-- Messages Sender and Receiver -->
+            <!-- Admin message -->
+            <div class="overshadowed-layer messagecontents">
+                <div class="displayinline-spacebetween">
+                    <div class="displayinlineFlex">
+                        <span class="user-img" style="margin-right:17px;">
+                            <img src="../../../../../../assets/icons/custom-icons/user-img.png" />
+                        </span>
+                        <span>
+                            Anthony Sharka <br/>
+                            <span class="lightash-color">santhony@essolo.com</span>
+                        </span>
+                    </div>
+                    <div class="lightash-color">
+                        Mar 21, 2019 04:15
+                    </div>
+                </div>
+    
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus viverra habitasse nibh habitasse facilisis nunc amet, urna. Vel lectus ipsum leo.
+                </div>
+                
+            </div>
+            <!-- Admin message -->
+    
+            <!-- User message -->
+            <div class="overshadowed-layer messagecontents">
+                <div class="displayinline-spacebetween">
+                    <div class="displayinlineFlex">
+                        <span class="user-img" style="margin-right:17px;">
+                            <img src="../../../../../../assets/icons/custom-icons/user-img.png" />
+                        </span>
+                        <span>
+                            Jessica Wong <br/>
+                            <span class="lightash-color">wjessica@gmail.com</span>
+                        </span>
+                    </div>
+                    <div class="lightash-color">
+                        Mar 21, 2019 04:15
+                    </div>
+                </div>
+    
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra pretium tortor nunc tincidunt. Tellus pharetra molestie accumsan elementum id eget egestas nisi pellentesque. Pellentesque feugiat sit morbi et. Tincidunt sollicitudin ultricies elementum id sed netus. Hac auctor id pellentesque enim malesuada neque quis.
+    
+                    <br/><br/>
+                    Regards,<br/>
+                    Jessica H. Wong,<br/>
+                    +92100420401
+                </div>
+                
+            </div>
+            <!-- User message -->
+            <!-- Messages Sender and Receiver -->
+    
+    
+    
+            <!-- Input box with send button -->
+            <app-form-input
+                formInputIcon="../../../assets/icons/custom-icons/redSendButton.svg" width="100px"
+                iconAlignment="right"
+            >
+            <input
+                class="formInput"
+                type="text"
+                placeholder="Type in your message"
+                [formControl]="searchbarInput"
+                (change)="(searchbarSubmitFunction)"
+            />
+            </app-form-input>
+            <!-- Input box with send button -->
+             
+    
+    
+            <!--//////////////////////////////////////// Base Content Ends ///////////////////////////////////-->
+    
+      </page-section-wrapper>
+    </page-content-wrapper>
+    
+    <!-- ///////////////////////////////////// VIEWMESSAGE TICKET //////////////////////////////////// -->

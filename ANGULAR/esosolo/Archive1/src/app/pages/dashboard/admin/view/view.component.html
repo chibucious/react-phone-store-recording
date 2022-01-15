@@ -1,0 +1,185 @@
+<page-content-wrapper>
+  <page-section-wrapper display="column">
+    <section-header
+      >View Adminstrators
+
+      <div class="section-content-two">
+        <span class="section-menu-wrapper">
+          <div
+            (click)="toogleMenuState(false)"
+            class="menu-icon {{ !isGrid && 'active' }}"
+          >
+            <img
+              class=""
+              src="../../../../../assets/icons/custom-icons/hamburger-open.svg"
+            />
+          </div>
+
+          <div
+            (click)="toogleMenuState(true)"
+            class="menu-icon {{ isGrid && 'active' }}"
+          >
+            <img
+              class=""
+              src="../../../../../assets/icons/Iconly/Light/Category.svg"
+            />
+          </div>
+        </span>
+
+        <button class="formButton">Add Administrator</button>
+      </div>
+    </section-header>
+
+    <page-section-wrapper *ngIf="!isGrid" display="column">
+      <div class="table-header">
+        <span class="table-content checkbox">
+          <img
+            src="../../../../../assets/icons/Iconly/Two-tone/Tick Square.svg"
+            alt=""
+          />
+        </span>
+
+        <span class="table-content company-name">
+          Name
+
+          <img
+            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+            alt=""
+          />
+        </span>
+
+        <span class="table-content company-name">
+          ID
+
+          <img
+            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+            alt=""
+          />
+        </span>
+
+        <span class="table-content company-name">
+          Company
+
+          <img
+            src="../../../../../assets/icons/custom-icons/switch-column.svg"
+            alt=""
+          />
+        </span>
+        
+        <span class="table-content company-name">
+            Site Role
+  
+            <img
+              src="../../../../../assets/icons/custom-icons/switch-column.svg"
+              alt=""
+            />
+        </span>
+
+        <span class="table-content company-name">
+            Last Active
+  
+            <img
+              src="../../../../../assets/icons/custom-icons/switch-column.svg"
+              alt=""
+            />
+        </span>
+
+        <span class="table-content company-status"> Status </span>
+
+        <span class="table-content company-action"> Action </span>
+      </div>
+
+      <div *ngFor="let admin of adminList" class="table-row">
+        <span class="table-content checkbox">
+          <img
+            src="../../../../../assets/icons/Iconly/Two-tone/Tick Square.svg"
+            alt=""
+          />
+        </span>
+
+        <span class="table-content admin-name">
+            <img src="{{ admin.icon }}" alt=""/>
+            {{ admin.name }}
+        </span>
+
+        <span class="table-content admin-id">{{
+          admin.userid
+        }}</span>
+
+        <span class="table-content admin-company">{{ admin.company }}</span>
+
+        <span class="table-content admin-role">{{ admin.role }}</span>
+
+        <span class="table-content admin-lastActivity">{{
+          admin.activity
+        }}</span>
+
+        <span
+          class="table-content company-status {{
+            admin.status && 'active-status'
+          }}"
+          >{{ admin.status ? "Active" : "Inactive" }}</span
+        >
+
+        <span
+          (click)="selectAdmin(admin)"
+          class="table-content company-action"
+          >More details
+
+          <img
+            src="../../../../../assets/icons/Iconly/Light/Arrow - Right 2.red.svg"
+            alt=""
+          />
+        </span>
+      </div>
+    </page-section-wrapper>
+
+    <page-section-wrapper>
+      <div class="pagination-section list">
+        <div class="pagination-sections-wrapper">
+          <span class="pagination-section">
+            <p class="pagination-legend">Showing</p>
+            <p class="pagination-title">1</p>
+            <p class="pagination-title">-</p>
+            <p class="pagination-title">10</p>
+            <p class="pagination-legend">of</p>
+            <p class="pagination-title">10</p>
+            <p class="pagination-legend">results</p>
+          </span>
+        </div>
+
+        <div class="pagination-sections-wrapper">
+          <span class="pagination-section center">
+            <img
+              class="pagination-icon"
+              src="../../../../../assets/icons/Iconly/Light/Arrow - Left 2.svg"
+              alt=""
+            />
+            <p class="pagination-title">PREVIOUS</p>
+            <p class="pagination-title">1</p>
+            <p class="pagination-legend">of</p>
+            <p class="pagination-title">10</p>
+            <p class="pagination-title">NEXT</p>
+            <img
+              class="pagination-icon"
+              src="../../../../../assets/icons/Iconly/Light/Arrow - Right 2.svg"
+              alt=""
+            />
+          </span>
+        </div>
+
+        <div class="pagination-sections-wrapper">
+          <span class="pagination-section end">
+            <p class="pagination-legend">Results per page:</p>
+            <p class="pagination-title">8</p>
+            <img
+              class="pagination-icon"
+              src="../../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+              alt=""
+            />
+          </span>
+        </div>
+      </div>
+    </page-section-wrapper>
+  </page-section-wrapper>
+</page-content-wrapper>

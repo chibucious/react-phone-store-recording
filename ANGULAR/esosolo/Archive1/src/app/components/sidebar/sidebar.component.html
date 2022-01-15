@@ -1,0 +1,32 @@
+<nav class="main-menu">
+  <div class="logo-wrapper">
+    <a class="logo-link nav-icon" [routerLink]="landingPageRoute">
+      <img id="logo-one" class="logo" [src]="appLogo" />
+    </a>
+  </div>
+
+  <div class="scrollbar" id="style-1">
+    <ul class="nav-menu">
+      <li *ngFor="let menu of sideBarMenu">
+        <a
+          class="nav-icon"
+          [routerLink]="menu.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: false }"
+        >
+          <img class="nav-icon-body" [src]="menu.icon" />
+
+          <img class="nav-icon-body active" [src]="menu.activeIcon" />
+        </a>
+      </li>
+    </ul>
+
+    <ul class="logout">
+      <li>
+        <a class="nav-icon">
+          <img (click)="logout()" class="nav-icon-body" [src]="logOutIcon" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

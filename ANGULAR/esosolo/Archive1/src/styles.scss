@@ -1,0 +1,29 @@
+/* Main custom styles file */
+@import "./assets/styles/main.scss";
+
+:root {
+  --size: 100%;
+  --clr-bg: #272324;
+  --clr1: #bbbb88;
+  --clr2: #ccc68d;
+  --clr3: #eedd99;
+  --clr4: #eec290;
+  --clr5: #eeaa88;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins',
+    sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  // background: linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), #FFFFFF;
+  background-color: white;
+}
+
+// font-family: 'Roboto Mono', monospace;
+// font-family: 'Poppins', sans-serif;

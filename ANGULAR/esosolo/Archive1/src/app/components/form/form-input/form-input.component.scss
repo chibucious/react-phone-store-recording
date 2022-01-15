@@ -1,0 +1,101 @@
+// Import default styles and theme colours
+@import "../../../../assets/styles/main.scss";
+
+.formInputWrapper {
+  display: flex;
+  align-items: center;
+  // padding: 0 0.2rem 0.3rem;
+  border-bottom: 1px solid $silentText;
+
+  padding: 14px 20px 12px 20px;
+
+  background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  border: none;
+
+  border-image-source: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+
+  box-shadow: inset -4px -4px 8px #FFFFFF,
+    inset 4px 4px 8px rgba(0, 0, 0, 0.16);
+
+  border-radius: 24px;
+
+
+  // When input field is focused on, we highlight the border of the input wrapper to show the user the specific input is active
+  &:focus-within {
+    border: 0.01px inset $essoloRed;
+    transition: all 0.2s ease-in;
+  }
+
+  &.bigger {
+    .formInputIcon {
+      height: 25px !important;
+      width: 40px !important;
+    }
+  }
+
+  &.smaller {
+    padding: 5px 20px;
+  }
+
+  &.smallest {
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  &.rounded {
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  // Input icon styles
+  .formInputIcon {
+    height: 24px;
+    width: 24px;
+
+    opacity: 0.4;
+
+    &.bold {
+      opacity: 1;
+    }
+
+    &.none {
+      &#left {
+        display: none;
+      }
+
+      &#right {
+        display: none;
+      }
+    }
+
+    &.left {
+
+      &#left {
+        display: block;
+        margin-right: 0.5rem;
+      }
+
+      &#right {
+        display: none;
+      }
+    }
+
+    &.right {
+
+      &#left {
+        display: none;
+      }
+
+      &#right {
+        display: block;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,31 @@
+<div class="page-wrapper">
+  <app-topbar
+    [searchbarInput]="pageWrapperSearchbarInput"
+    [searchbarSubmitFunction]="pageWrapperSearchbarSumbitFunction"
+    (menuEvent)="listenForMobileMenuEvents($event)"
+  ></app-topbar>
+
+  <app-mobile-menu
+    [isMenuOpened]="isMobileMenu"
+    (menuEvent)="listenForMobileMenuEvents($event)"
+  ></app-mobile-menu>
+
+  <app-sidebar></app-sidebar>
+
+  <div class="page-wrapper-container">
+    <div class="page-submenu">
+      <app-submenu
+        [subMenuList]="pageSubMenuList"
+        [menuItem]="pageMenu"
+        (selectedRoute)="listenForSelectedRoute($event)"
+      ></app-submenu>
+    </div>
+
+    <div class="page-content-container">
+      <div class="page-content">
+        <!-- Reflect the submenu page content here -->
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

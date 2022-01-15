@@ -1,0 +1,321 @@
+  // Import default styles and theme colours
+  @import "../../../../../assets/styles/main.scss";
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 230px;
+    // display: flex;
+    cursor: pointer;
+
+    .section-one {
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        height: 15px;
+        width: auto;
+      }
+    }
+
+    .wallet-title {
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0.005em;
+      text-align: left;
+      color: $silentText;
+      text-transform: uppercase;
+
+      img {
+        height: 14px;
+        width: 16px;
+      }
+    }
+
+    .wallet-amount {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0.004em;
+      text-align: left;
+      color: $essoloRed;
+    }
+
+    .wallet-trend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      font-size: 12px;
+
+      img {
+        height: 14px;
+        width: 16px;
+        margin-right: 0.3rem;
+      }
+
+      .up {
+        text-align: right;
+      }
+
+      .down {}
+
+    }
+
+    .card-icon {
+      height: 60px;
+      width: 70px;
+    }
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    .table-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 180.5px;
+      text-align: right;
+      font-size: 12px;
+      color: $silentBoldText;
+      padding: 9px;
+      column-gap: 0.5rem;
+      cursor: pointer;
+      text-align: left;
+      text-transform: uppercase;
+
+      &.checkbox,
+      &.company-status {
+        min-width: auto;
+        text-align: center;
+      }
+
+      &.company-status {
+        min-width: 60px;
+      }
+
+      &.company-action {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .table-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    .table-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 180.5px;
+      text-align: right;
+      font-size: 14px;
+      color: $essoloBlack;
+      padding: 9px;
+      background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%),
+        #FFFFFF;
+      box-shadow: -4px -4px 8px #FFFFFF,
+        4px 4px 8px rgba(0, 0, 0, 0.16);
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: left;
+
+      &.active {
+        background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.05) 0.12%, rgba(0, 0, 0, 0.025) 100%),
+          #FFFFFF;
+        box-shadow: inset -4px -4px 8px #FFFFFF,
+          inset 4px 4px 8px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+      }
+
+      &.checkbox,
+      &.company-status {
+        min-width: auto;
+        text-align: center;
+      }
+
+      &.company-status {
+        color: #FF0000;
+        min-width: 60px;
+
+        &.active-status {
+          color: #2FC26CCC;
+        }
+      }
+
+      &.company-action {
+        justify-content: space-between;
+        color: $essoloRed;
+      }
+    }
+  }
+
+  .section-content-one {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    // Mobile Layout
+    @media only screen and (min-width: 320px) and (max-width: 740px) {
+      // flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 0;
+      row-gap: 1.2rem;
+
+      .break {
+        width: 100%;
+      }
+
+    }
+  }
+
+  .section-content-two {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    .section-menu-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      // Mobile Layout
+      @media only screen and (min-width: 320px) and (max-width: 740px) {
+        display: none;
+      }
+
+      .menu-icon {
+        position: relative;
+        display: table-cell;
+        place-content: center;
+        height: 24px;
+        text-align: right;
+        font-size: 20px;
+        color: $essoloRed;
+        padding: 7px;
+        background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%),
+          #FFFFFF;
+        box-shadow: -4px -4px 8px #FFFFFF,
+          4px 4px 8px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+        cursor: pointer;
+
+        &.active {
+          background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.05) 0.12%, rgba(0, 0, 0, 0.025) 100%),
+            #FFFFFF;
+          box-shadow: inset -4px -4px 8px #FFFFFF,
+            inset 4px 4px 8px rgba(0, 0, 0, 0.16);
+          border-radius: 10px;
+        }
+      }
+    }
+
+    // Mobile Layout
+    @media only screen and (min-width: 320px) and (max-width: 740px) {
+      flex-direction: column;
+      row-gap: 1rem;
+      width: 100%;
+
+      &.break {
+        width: 100%;
+      }
+
+      .formButton {
+        width: 100%;
+      }
+
+    }
+  }
+
+  .pagination-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .pagination-sections-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      .pagination-section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 1rem;
+        padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+
+        &.center {
+          justify-content: center;
+        }
+
+        &.end {
+          justify-content: flex-end;
+        }
+
+        .pagination-legend {
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0.005em;
+          text-align: center;
+          color: $silentText;
+          margin: 0;
+        }
+
+        .pagination-title {
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0.005em;
+          text-align: center;
+          color: $essoloBlack;
+          margin: 0;
+        }
+
+        .pagination-icon {
+          cursor: pointer;
+        }
+
+        // Mobile Layout
+        @media only screen and (min-width: 320px) and (max-width: 740px) {
+
+          &.center,
+          &.end,
+          & {
+            justify-content: center;
+          }
+
+        }
+
+
+      }
+    }
+
+    // Mobile Layout
+    @media only screen and (min-width: 320px) and (max-width: 740px) {
+
+      &.list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+
+      }
+
+    }
+  }

@@ -1,0 +1,29 @@
+// Import default styles and theme colours
+@import "../../../../assets/styles/main.scss";
+
+.form-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  border: none;
+  height: 100%;
+  margin: 1rem 0;
+  row-gap: 1.5rem;
+  box-sizing: border-box;
+  // background: linear-gradient(111.69deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.04) 100.12%),
+  //   #FFFFFF;
+  box-shadow: -8px -8px 16px rgba(255, 255, 255, 0.1),
+    8px 8px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+  background: $essoloBodyColor;
+
+  &.normalStyles {}
+
+  // Increase the row gap on smaller forms to make them spacious but for lengthier forms, we default to the origin styling
+  &.extraStyles {
+    row-gap: 2rem;
+  }
+
+}

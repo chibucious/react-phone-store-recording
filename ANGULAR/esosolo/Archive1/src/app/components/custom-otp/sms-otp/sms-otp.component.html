@@ -1,0 +1,69 @@
+<app-modal-wrapper
+  [wrapperCanShowModal]="showModalBackground"
+  [wrapperCanCloseModalByBackDrop]="true"
+  [wrapperShowModalCloseButton]="true"
+  wrapperModalTitle="Verification"
+  wrapperModalSubtitle="Provide your prefered contact information to sent the OTP code"
+  [showModalFooter]="false"
+  (emitModalClosed)="resetModalBackDrop($event)"
+>
+  <app-form-row rowDisplay="column">
+    <div class="wallet-credentials-wrapper">
+      <div
+        (click)="showDropDown('currency-dropdownList')"
+        class="currency-selector-wrapper"
+      >
+        <app-form-input
+          formInputIcon="../../../../assets/icons/remix/line/system/arrow-drop-down-line-selector.svg"
+          iconAlignment="right"
+        >
+          <input class="formInput" type="text" [formControl]="intcode" />
+        </app-form-input>
+
+        <div
+          id="currency-dropdownList"
+          class="currency-selector-wrapper_dropdown_list"
+        >
+          <app-card-row
+            *ngFor="let intCode of intCodeList; index as idx"
+            rowDisplay="column"
+            id="card-{{ idx }}"
+            (click)="selectDropDownItem(intCode)"
+          >
+            <div
+              [class]="
+                intCode.selected === true
+                  ? 'currency-selector_dropdown_list_single selected'
+                  : 'selector-title_dropdown_list_single'
+              "
+            >
+              <div class="single-earning-detail">
+                <span class="riders-box">
+                  <p>{{ intCode.country }}</p>
+                  <img [src]="intCode?.flag" class="riders-box_value" />
+                </span>
+              </div>
+            </div>
+          </app-card-row>
+        </div>
+      </div>
+
+      <app-form-input
+        class="wallet-email"
+        formInputIcon="../../../../assets/icons/Iconly/Light/Call.svg"
+        iconAlignment="right"
+      >
+        <input
+          class="formInput"
+          type="text"
+          placeholder="Phone number"
+          [formControl]="sendersContact"
+        />
+      </app-form-input>
+    </div>
+  </app-form-row>
+
+  <app-card-row rowDisplay="column">
+    <button (click)="sendOtpBySMS()" class="formButton">Send OTP</button>
+  </app-card-row>
+</app-modal-wrapper>

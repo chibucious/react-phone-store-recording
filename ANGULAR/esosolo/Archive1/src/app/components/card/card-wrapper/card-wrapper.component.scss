@@ -1,0 +1,67 @@
+// Import default styles and theme colours
+@import "../../../../assets/styles/main.scss";
+
+.card-wrapper {
+  position: relative;
+  display: flex;
+  padding: 2rem;
+  border: none;
+  height: 100%;
+  box-sizing: border-box;
+  row-gap: 1.5rem;
+  transition: background 2s ease-in 1s;
+  background: linear-gradient(111.69deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.025) 100.12%),
+    #FFFFFF;
+  box-shadow: -8px -8px 16px #FFFFFF,
+    8px 8px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+
+  &.active {
+    transition: background 0.2s ease-in 0.5s;
+
+    background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.1) 0.12%, rgba(0, 0, 0, 0.05) 100%),
+      linear-gradient(0deg, #FFFFFF, #FFFFFF);
+
+    box-shadow: 8px 8px 16px 0px #00000029 inset,
+      -8px -8px 16px 0px #FFFFFF inset;
+  }
+
+  &.normalStyles {}
+
+  // Increase the row gap on smaller forms to make them spacious but for lengthier forms, we default to the origin styling
+  &.extraStyles {
+    row-gap: 2rem;
+  }
+
+  &.flex-start {
+    justify-content: flex-start;
+  }
+
+  &.flex-end {
+    justify-content: flex-end;
+  }
+
+
+  &.row {
+    flex-direction: row;
+    column-gap: 1.2rem;
+  }
+
+  &.column {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.2rem;
+  }
+
+  // Mobile Layout
+  @media only screen and (min-width: 320px) and (max-width: 740px) {
+
+    &.row,
+    &.column {
+      flex-direction: column;
+      row-gap: none;
+      row-gap: 1.3rem;
+    }
+  }
+
+}

@@ -1,0 +1,185 @@
+<page-content-wrapper>
+  <page-section-wrapper display="column">
+    <section-header
+      >Overview
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        placeholder="Monthly"
+      >
+      </app-dropdown>
+    </section-header>
+
+    <div class="card-list">
+      <div *ngFor="let dashboard of dashboardsList" class="card-wrapper">
+        <app-card-wrapper>
+          <!-- section a -->
+          <app-card-row rowDisplay="row">
+            <!-- <loading-wrapper
+            [hidden]="dashboardListIsLoading"
+            [wrapperAnimation]="cardAnimation"
+            [wrapperCount]="cardCount"
+            [wrapperAppearance]="cardAppearance"
+            [wrapperTheme]="{
+              height: '2rem',
+              width: '6rem',
+              'border-radius': '6.13px',
+              'background-color': '#f4f5f9'
+            }"
+          >
+          </loading-wrapper> -->
+
+            <span [hidden]="!dashboardListIsLoading" class="wallet-title">
+              {{ dashboard.type }}
+            </span>
+          </app-card-row>
+
+          <!-- section b -->
+          <app-card-row rowDisplay="row">
+            <!-- <loading-wrapper
+            [hidden]="dashboardListIsLoading"
+            [wrapperAnimation]="cardAnimation"
+            [wrapperCount]="cardCount"
+            [wrapperAppearance]="cardAppearance"
+            [wrapperTheme]="{
+              height: '2rem',
+              width: '7rem',
+              'border-radius': '6.13px',
+              'background-color': '#f4f5f9'
+            }"
+          >
+          </loading-wrapper> -->
+
+            <span
+              [hidden]="!dashboardListIsLoading"
+              class="wallet-amount {{ dashboard?.class }}"
+              >{{ dashboard.metric }}
+            </span>
+          </app-card-row>
+
+          <!-- section c -->
+          <app-card-row [hidden]="dashboardListIsLoading" rowDisplay="row">
+            <!-- <loading-wrapper
+            [wrapperAnimation]="cardAnimation"
+            [wrapperCount]="cardCount"
+            [wrapperAppearance]="cardAppearance"
+            [wrapperTheme]="{
+              height: '1rem',
+              width: '4rem',
+              'border-radius': '6.13px',
+              'background-color': '#f4f5f9'
+            }"
+          >
+          </loading-wrapper>
+
+          <loading-wrapper
+            [wrapperAnimation]="cardAnimation"
+            [wrapperCount]="cardCount"
+            [wrapperAppearance]="cardAppearance"
+            [wrapperTheme]="{
+              height: '1rem',
+              width: '4rem',
+              'margin-left': '1rem',
+              'border-radius': '6.13px',
+              'background-color': '#f4f5f9'
+            }"
+          >
+          </loading-wrapper> -->
+          </app-card-row>
+
+          <app-card-row [hidden]="!dashboardListIsLoading" rowDisplay="row">
+            <span
+              *ngIf="!dashboard.trend"
+              [class]="dashboardListIsLoading && 'wallet-trend down'"
+            >
+              <img
+                [hidden]="!dashboardListIsLoading"
+                src="../../../../../assets/icons/Iconly/Bold/Arrow - Down.svg"
+                alt=""
+              />
+              {{ dashboard.trendMetric }}
+            </span>
+
+            <span *ngIf="dashboard.trend" class="wallet-trend up"
+              ><img
+                [hidden]="!dashboardListIsLoading"
+                src="../../../../../assets/icons/Iconly/Bold/Arrow - Up.svg"
+                alt=""
+              />
+              {{ dashboard.trendMetric }}
+            </span>
+
+            <span>
+              <img class="card-icon" [src]="dashboard.icon" alt="" />
+            </span>
+          </app-card-row>
+        </app-card-wrapper>
+      </div>
+    </div>
+  </page-section-wrapper>
+
+  <page-section-wrapper display="column">
+    <section-header
+      >Company stat
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        placeholder="Yearly"
+      >
+      </app-dropdown>
+    </section-header>
+
+    <!-- <app-card-wrapper class="map-wrapper" display="row"> -->
+    <img
+      class="companies-graph"
+      src="../../../../../assets/icons/custom-icons/companies-graph.svg"
+      alt=""
+    />
+    <!-- </app-card-wrapper> -->
+  </page-section-wrapper>
+
+  <page-section-wrapper display="column">
+    <section-header
+      >Location data
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        placeholder="Yearly"
+      >
+      </app-dropdown>
+    </section-header>
+
+    <page-section-wrapper>
+      <img
+        class="companies-map"
+        src="../../../../../assets/icons/custom-icons/world-map.svg"
+        alt=""
+      />
+
+      <app-card-wrapper class="viewership-wrapper">
+        <section-header padding="false">Top Countries</section-header>
+
+        <div class="countries-list">
+          <div *ngFor="let users of dashboardCountriesList" class="viewership">
+            <span class="user-country">
+              <img
+                src="../../../../../assets/icons/flags-list/{{
+                  users.code
+                }}.svg"
+              />
+              {{ users.country }}
+            </span>
+
+            <span>{{ users.users }}k</span>
+          </div>
+        </div>
+      </app-card-wrapper>
+    </page-section-wrapper>
+  </page-section-wrapper>
+</page-content-wrapper>

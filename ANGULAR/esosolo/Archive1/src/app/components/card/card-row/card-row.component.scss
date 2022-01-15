@@ -1,0 +1,41 @@
+// Import default styles and theme colours
+@import "../../../../assets/styles/main.scss";
+
+.cardRow {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: auto;
+  // text-align: left;
+
+  &.row {
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    // justify-content: center;
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+
+  &.row-space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &.extraClass {
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    column-gap: 4rem;
+    box-sizing: border-box;
+  }
+
+  &.header {
+    margin-top: 1rem;
+  }
+
+  &.column {
+    grid-template-rows: auto;
+    row-gap: 1rem;
+
+  }
+}

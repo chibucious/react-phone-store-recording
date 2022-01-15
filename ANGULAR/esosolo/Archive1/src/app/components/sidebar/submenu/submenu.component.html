@@ -1,0 +1,78 @@
+<div class="submenu-wrapper">
+  <div class="bread-crumbs-wrapper">
+    <app-bread-crumbs [breadCrumbs]="subMenuBreadCrumbs"></app-bread-crumbs>
+  </div>
+
+  <div class="submenu-content-wrapper">
+    <div class="submenu-title">{{ menuItem?.label }}</div>
+
+    <div class="submenu-list">
+      <div
+        *ngFor="let submenu of subMenuList"
+        [routerLink]="submenu.route"
+        class="submenu {{ submenu.selected && 'active' }}"
+        (click)="selectSubMenu(submenu)"
+      >
+        <img class="submenu-icon" [src]="submenu.icon" />
+
+        <p class="submenu-label">
+          {{ submenu.label }}
+        </p>
+      </div>
+
+      <div class="submenu-mobile-dropdown">
+        {{ selectedMenuLabel }}
+
+        <img
+          (click)="showDropDown()"
+          class="submenu-icon"
+          src="../../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+        />
+      </div>
+
+      <div
+        id="dropdownList"
+        class="selector-title_dropdown_list {{ isOpen && 'show-dropdown' }}"
+      >
+        <div
+          *ngFor="let submenu of subMenuList"
+          [routerLink]="submenu.route"
+          class="submenu-mobile {{ submenu.selected && 'active' }}"
+          (click)="selectSubMenu(submenu)"
+        >
+          <div
+            [class]="
+              submenu.selected === true
+                ? 'selector-title_dropdown_list_single selected'
+                : 'selector-title_dropdown_list_single'
+            "
+          >
+            <div class="single-earning-detail">
+              <span class="time-box">
+                <div class="time-box_icon-wrapper">
+                  <img [src]="submenu.icon" />
+                </div>
+              </span>
+              <span class="riders-box">
+                <p class="riders-box_value">
+                  {{ submenu.label }}
+                </p>
+              </span>
+
+              <span class="cash-box">
+                <img
+                  [class]="
+                    submenu.selected === true
+                      ? 'cash-box_value success'
+                      : 'cash-box_value'
+                  "
+                  src="../../../../assets/icons/Iconly/Bold/Tick Square.svg"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div [hidden]="!showModalTemplate" class="modal-container" id="custom-modal">
+  <div class="modal-backdrop" (click)="closeModal()"></div>
+  <!-- <div> -->
+  <div class="modal-body">
+    <ng-content></ng-content>
+  </div>
+  <!-- </div> -->
+</div>

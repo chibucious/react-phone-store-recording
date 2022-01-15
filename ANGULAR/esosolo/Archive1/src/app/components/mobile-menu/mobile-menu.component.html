@@ -1,0 +1,44 @@
+<div class="mobile-menu-wrapper {{ isMenuOpened && 'active' }}">
+  <div class="mobile-menu-content">
+    <div class="menu-icon-wrapper">
+      <img
+        (click)="closeMeun()"
+        class="menu-icon"
+        src="../../../assets/icons/custom-icons/hamburger-close.svg"
+      />
+
+      <span class="menu-icon-settings">
+        <div
+          *ngFor="let option of menuOptions"
+          class="menu-icon"
+          [id]="option.menuId"
+        >
+          <img class="option.menuId" [src]="option.icon" />
+        </div>
+      </span>
+    </div>
+    <div class="menu-content-wrapper">
+      <div
+        *ngFor="let menu of sideBarMenu"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        class="submenu {{ menu.selected && 'active' }}"
+        (click)="selectMenu(menu)"
+      >
+        <div class="submenu-icon menu-icon {{ menu.selected && 'active' }}">
+          <img [src]="menu.icon" />
+        </div>
+
+        <p class="submenu-label">
+          {{ menu.label }}
+        </p>
+      </div>
+
+      <div class="submenu" (click)="logOut()">
+        <img class="submenu-icon" [src]="logOutIcon" />
+
+        <p class="submenu-label">Log Out</p>
+      </div>
+    </div>
+  </div>
+</div>

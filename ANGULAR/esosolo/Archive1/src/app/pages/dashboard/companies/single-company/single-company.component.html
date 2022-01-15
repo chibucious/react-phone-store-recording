@@ -1,0 +1,56 @@
+<page-content-wrapper>
+  <page-section-wrapper display="column">
+    <div class="company-navigation">
+      <div (click)="closePage()" class="navigation">
+        <img src="../../../../../assets/icons/Iconly/Light/Arrow - Left.svg" />
+        {{ componentData?.name }}
+      </div>
+    </div>
+
+    <div class="company-header">
+      <img [src]="componentData?.logo" alt="" />
+    </div>
+
+    <app-tabs
+      [tabsList]="companyTabsList"
+      (tabSelected)="updateTabSection($event)"
+    ></app-tabs>
+    <app-tab-section>
+      <app-information
+        [@showTabSection]="selectedTab == '1' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '1'"
+        [companyInfo]="componentData"
+      ></app-information>
+
+      <app-kyb
+        [@showTabSection]="selectedTab == '2' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '2'"
+      ></app-kyb>
+
+      <app-programs
+        [@showTabSection]="selectedTab == '3' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '3'"
+      ></app-programs>
+
+      <app-api
+        [@showTabSection]="selectedTab == '4' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '4'"
+      ></app-api>
+
+      <app-users
+        [@showTabSection]="selectedTab == '5' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '5'"
+      ></app-users>
+
+      <app-subscriptions
+        [@showTabSection]="selectedTab == '6' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '6'"
+      ></app-subscriptions>
+
+      <app-legal
+        [@showTabSection]="selectedTab == '7' ? 'show' : 'hide'"
+        *ngIf="selectedTab == '7'"
+      ></app-legal>
+    </app-tab-section>
+  </page-section-wrapper>
+</page-content-wrapper>

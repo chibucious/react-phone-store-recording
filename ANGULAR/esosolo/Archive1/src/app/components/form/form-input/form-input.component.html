@@ -1,0 +1,17 @@
+<div class="formInputWrapper {{ size }}">
+  <!-- Input specific icon -->
+  <img
+    [class]="formInputIconClass"
+    id="left"
+    [src]="formInputIcon"
+    alt="input icon"
+  />
+  <!-- Reflect actual input field -->
+  <ng-content></ng-content>
+  <img
+    [class]="formInputIconClass"
+    id="right"
+    [src]="formInputIcon"
+    alt="input icon"
+  />
+</div>

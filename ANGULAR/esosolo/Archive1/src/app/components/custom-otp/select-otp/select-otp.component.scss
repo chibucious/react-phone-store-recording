@@ -1,0 +1,151 @@
+// Import default styles and theme colours
+@import "../../../../assets/styles/main.scss";
+
+.transaction-receiver-wrapper {
+
+  background: linear-gradient(111.69deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.025) 100.12%),
+    #FFFFFF;
+  border-radius: 49px;
+  box-shadow: -4px -4px 8px #FFFFFF,
+    4px 4px 8px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  // padding: 20px 37.5px 20px 20px;
+
+  &.selected {
+    background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.05) 0.12%, rgba(0, 0, 0, 0.025) 100%),
+      #FFFFFF;
+    /* Neu/Buttons/Pressed */
+
+    box-shadow: inset -4px -4px 8px #FFFFFF,
+      inset 4px 4px 8px rgba(0, 0, 0, 0.16);
+  }
+
+  // Individual wallet holder
+  .wallets_single {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 86px;
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+
+
+    .single-earning-detail {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: black;
+
+      .riders-box_value,
+      .cash-box_value {
+        margin: 0 0 0.1rem;
+      }
+
+      .time-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+        width: 18%;
+
+
+
+        &_icon-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          padding: 12px;
+          background: linear-gradient(111.69deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.025) 100.12%),
+            #FFFFFF;
+          /* Neu/Buttons/Default */
+
+          box-shadow: -4px -4px 8px #FFFFFF,
+            4px 4px 8px rgba(0, 0, 0, 0.16);
+          border-radius: 50%;
+
+
+
+          img {
+            min-height: 24px;
+            min-width: 24px;
+          }
+        }
+
+      }
+
+      .riders-box {
+        width: 50.66%;
+        padding-left: 0.4rem;
+        text-align: left;
+
+        .riders-box_value,
+        .riders-box_legend {
+          font-family: Poppins;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0.005em;
+        }
+
+        .riders-box_value {
+          color: $silentText;
+          font-family: Poppins;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0.025em;
+          text-align: left;
+
+        }
+
+        .riders-box_legend {
+          margin: 0;
+          font-family: Poppins;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: 0.005em;
+          text-align: left;
+
+        }
+      }
+
+      .cash-box {
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: flex-end;
+        width: 25.15%;
+        // padding-bottom: 2.15rem;
+
+        .cash-box_value {
+          margin: 0;
+          display: none;
+          height: 30px;
+          width: 30px;
+          opacity: 1;
+
+        }
+
+
+      }
+
+    }
+
+  }
+}
+
+
+.formButton {
+  min-height: 48px;
+}

@@ -1,0 +1,276 @@
+  // Import default styles and theme colours
+  @import "../../../../../assets/styles/main.scss";
+
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    width: 70vw;
+  }
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    // min-width: 230px;
+    // display: flex;
+
+    .wallet-title {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0.005em;
+      text-align: left;
+      color: $silentText;
+      text-transform: uppercase;
+    }
+
+    .wallet-amount {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0.004em;
+      text-align: left;
+      color: $essoloRed;
+
+      &.red {
+        color: #FF0000;
+      }
+
+      &.green {
+        color: #2FC26C;
+      }
+
+      &.yellow {
+        color: #FFB92D;
+      }
+    }
+
+    .wallet-trend {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 50%;
+
+      .up {
+        text-align: right;
+      }
+
+      .down {}
+    }
+  }
+
+  .dashboard-graph {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .graph-metrics {
+
+    .metric-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.3rem;
+      align-items: flex-start;
+
+      .metric-content {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0.006em;
+        color: $essoloRed;
+        margin: 0;
+
+        &.green {
+          color: #2FC26C;
+        }
+
+        &.blue {
+          color: #2DB9FF;
+        }
+
+        &.black {
+          color: $silentBoldText;
+        }
+
+        &.yellow {
+          color: #FFB92D;
+        }
+
+        &.red {
+          color: #FF0000;
+        }
+      }
+
+      .metric-legend {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0.005em;
+        color: $silentBoldText;
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+
+    .metric-legend-wrapper {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+
+      .metric-legend {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 0.5rem;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0.025em;
+        color: $silentBoldText;
+
+        .green {
+          background-color: #2FC26C;
+          filter: invert(63%) sepia(48%) saturate(635%) hue-rotate(92deg) brightness(91%) contrast(87%);
+        }
+
+        .blue {
+          background-color: #2DB9FF;
+          filter: invert(61%) sepia(42%) saturate(2560%) hue-rotate(171deg) brightness(102%) contrast(101%);
+        }
+
+        .black {
+          background-color: $silentBoldText;
+          filter: invert(0%) sepia(10%) saturate(7462%) hue-rotate(272deg) brightness(106%) contrast(94%);
+        }
+
+        .yellow {
+          background: #FFB92D;
+          filter: invert(85%) sepia(23%) saturate(2384%) hue-rotate(333deg) brightness(102%) contrast(101%);
+        }
+
+        .red {
+          background-color: #FF0000;
+          filter: invert(22%) sepia(97%) saturate(7472%) hue-rotate(358deg) brightness(106%) contrast(114%);
+        }
+      }
+    }
+
+    &.one {
+      width: 23%;
+    }
+
+    &.two {
+      width: 50%;
+    }
+  }
+
+  .map-wrapper {
+
+    img {
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .viewership-wrapper {
+    width: 100%;
+
+    .countries-list {
+      display: flex;
+      column-gap: 1.3rem;
+      row-gap: 1.3rem;
+      width: 100%;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+
+      .viewership {
+        display: flex;
+        column-gap: 3rem;
+
+        // flex-wrap: wrap;
+
+        .user-country {
+          display: flex;
+          justify-content: space-between;
+          column-gap: 0.5rem;
+          text-transform: capitalize;
+          color: $silentText;
+
+          img {
+            border-radius: 5px;
+          }
+        }
+
+        // Mobile Layout
+        @media only screen and (min-width: 320px) and (max-width: 740px) {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+
+      }
+    }
+  }
+
+
+  .section-header-one {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    // Mobile Layout
+    @media only screen and (min-width: 320px) and (max-width: 740px) {
+      // flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 0;
+      row-gap: 1.2rem;
+
+      .break {
+        width: 100%;
+      }
+
+    }
+  }
+
+  .section-header-two {
+
+    // Mobile Layout
+    @media only screen and (min-width: 320px) and (max-width: 740px) {
+
+      &.break {
+        width: 100%;
+      }
+
+    }
+  }
+
+  // CHIBU STYLING
+  .overshadowed-layer{
+    background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%), #FFFFFF;
+    box-shadow: -4px -4px 8px #FFFFFF, 4px 4px 8px rgba(0, 0, 0, 0.16);
+    font-size: 14px;
+    line-height: 21px;
+    padding: 20px;
+  }
+
+  .essolored{
+    color: #8D1919;
+  }
+
+  .ticketicons{
+    height: 0.92px;
+    width: 0.92px;
+  }
+  // CHIBU STYLING

@@ -1,0 +1,14 @@
+<app-page-wrapper
+  pageWrapperParentPageText="Home"
+  pageWrapperChildPageText="Companies"
+  pageMenuId="admin"
+  (pageWrapperSelectedRoute)="pageWrapperRouteListener($event)"
+>
+  <app-overview
+    *ngIf="selectedSubMenuRoute == '/dashboard/admin'"
+  ></app-overview>
+
+  <app-add *ngIf="selectedSubMenuRoute == '/dashboard/admin/add'"></app-add>
+
+  <app-view *ngIf="selectedSubMenuRoute == '/dashboard/admin/view'"> </app-view>
+</app-page-wrapper>

@@ -1,0 +1,16 @@
+<div class="bread-crumbs-wrapper">
+  <span
+    *ngFor="let item of breadCrumbs; index as idx"
+    [routerLink]="item?.route"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="parent-page"
+  >
+    {{ item?.label }}
+
+    <img
+      class="showNextIcon {{ idx + 1 == lastChild ? '' : 'active' }}"
+      src="../../../../assets/icons/Iconly/Light-Outline/Arrow - Right 2.svg"
+    />
+  </span>
+</div>

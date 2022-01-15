@@ -1,0 +1,32 @@
+<app-modal-backdrop
+  [dontCloseModalByBackDrop]="wrapperCanCloseModalByBackDrop"
+  (getCloseModalByBackDrop)="setCanShowModal($event)"
+>
+  <app-modal-body [compressed]="showModalFooter == false ? 'compressed' : null">
+    <app-modal-header
+      [showModalCloseButton]="wrapperShowModalCloseButton"
+      [modalTitle]="wrapperModalTitle"
+      [modalSubtitle]="wrapperModalSubtitle"
+      [alignHeader]="wrapperAlignHeader"
+      [showSubtitle]="wrapperShowModalSubtitle"
+      (closeModalByButtonEvent)="setCanShowModal($event)"
+    >
+    </app-modal-header>
+
+    <app-modal-content>
+      <!-- Show the modal content below -->
+      <ng-content></ng-content>
+      <!-- Show the modal content above -->
+    </app-modal-content>
+
+    <app-modal-footer
+      [hidden]="!showModalFooter"
+      [footerTitle]="wrapperFooterTitle"
+      [footerSubtitle]="wrapperFooterSubtitle"
+      [footerLink]="wrapperFooterLink"
+      [alignFooter]="wrapperAlignFooter"
+      [showFooterSubtitle]="wrapperShowFooterSubtitle"
+    >
+    </app-modal-footer>
+  </app-modal-body>
+</app-modal-backdrop>

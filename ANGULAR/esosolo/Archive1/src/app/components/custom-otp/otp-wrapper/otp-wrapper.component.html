@@ -1,0 +1,51 @@
+<!-- OTP Sequence -->
+
+<!-- 1. Provide the user with an option to choose between two methods to send the OTP to them -->
+<app-select-otp
+  [hidden]="modalSequence !== 'onSelection'"
+  [showModalBackgroundObservable]="showOtpComponentObservable"
+  [smsContact]="OtpWrapperSMSMethodContact"
+  [emailContact]="OtpWrapperEmailMethodContact"
+  (selectedOTPMethod)="showSelectedOTPMethod($event)"
+  (emitModalClosed)="closeOtpComponent($event)"
+></app-select-otp>
+
+<!-- 2. Selected OTP method -->
+
+<!-- 2.a) First option shown if user selects mobile method -->
+<app-sms-otp
+  [hidden]="modalSequence !== 'onMethod' || wrapperSelectedOTPMethod == 'email'"
+  [showModalBackground]="showOtpComponent"
+  [OtpSMSMethodContact]="OtpWrapperSMSMethodContact"
+  [OtpSMSMethodEndpoint]="OtpWrapperSMSMethodEndpoint"
+  [OtpIntCode]="wrapperUserIntcode"
+  (confirmOTP)="showConfirmationTemplate($event)"
+  (emitUserMobileNumber)="updateUserMobileNumber($event)"
+  (emitUserIntCode)="updateUserIntCode($event)"
+  (emitModalClosed)="closeOtpComponent($event)"
+></app-sms-otp>
+
+<!-- 2.b) Second option shown if user selects email method -->
+<app-email-otp
+  [hidden]="modalSequence !== 'onMethod' || wrapperSelectedOTPMethod == 'phone'"
+  [showModalBackground]="showOtpComponent"
+  [OtpEmailMethodContact]="OtpWrapperEmailMethodContact"
+  [OtpEmailMethodEndpoint]="OtpWrapperEmailMethodEndpoint"
+  (confirmOTP)="showConfirmationTemplate($event)"
+  (emitUserEmail)="updateUserEmailAddress($event)"
+  (emitModalClosed)="closeOtpComponent($event)"
+></app-email-otp>
+
+<!-- 3. After a user receives the OTP, this screen is show for confirmation of the OTP -->
+<app-otp-confirmation
+  [hidden]="modalSequence !== 'onConfirm'"
+  [showModalBackground]="showOtpComponent"
+  [selectedOtpMethod]="wrapperSelectedOTPMethod"
+  [OtpEmailMethodContact]="OtpWrapperEmailMethodContact"
+  [OtpSMSMethodContact]="OtpWrapperSMSMethodContact"
+  [userIntcode]="wrapperUserIntcode"
+  [OtpEmailVerificationEndpoint]="OtpWrapperVerifyEmailEndpoint"
+  [OtpSMSVerificationEndpoint]="OtpWrapperVerifySMSEndpoint"
+  (onSuccess)="emitOtpSuccess($event)"
+  (emitModalClosed)="closeOtpComponent($event)"
+></app-otp-confirmation>

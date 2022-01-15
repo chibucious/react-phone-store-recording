@@ -1,0 +1,59 @@
+  .modal-header-wrapper {
+    display: flex;
+    width: 100%;
+
+    .modal-header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1rem;
+      width: 90%;
+      height: 100%;
+      padding: 0 0.5rem;
+      text-align: center;
+
+      &.left {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .cardTitle {
+        font-size: 18px;
+        color: #00000060;
+      }
+
+      .cardSubtitle {
+        margin-top: 0.5rem !important;
+        font-size: 16px;
+        color: #00000040;
+        text-align: center;
+      }
+
+
+      .cardTitle,
+      .cardSubtitle {
+        margin: 0;
+      }
+
+      .cardSubitle {
+        word-wrap: break-word;
+
+        .noShow {
+          display: none;
+        }
+      }
+    }
+
+
+    .modal-header-button {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 10%;
+      height: 100%;
+
+      .cardIcon {
+        cursor: pointer;
+      }
+    }
+  }

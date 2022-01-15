@@ -1,0 +1,138 @@
+// Import default styles and theme colours
+@import "../../../assets/styles/main.scss";
+
+.mobile-menu-wrapper {
+  display: none;
+
+  // Mobile Layout
+  @media only screen and (min-width: 320px) and (max-width: 740px) {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background: $essoloBodyColor;
+    position: fixed;
+    width: auto;
+    height: 100%;
+
+    &.active {
+      display: flex;
+    }
+
+    .mobile-menu-content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      background: $essoloBodyColor;
+      padding: 1rem 0;
+
+    }
+
+    .menu-icon-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+
+
+      .menu-icon {
+        position: relative;
+        display: table-cell;
+        place-content: center;
+        height: 24px;
+        text-align: right;
+        font-size: 20px;
+        color: $essoloRed;
+        padding: 7px;
+        background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%),
+          #FFFFFF;
+        box-shadow: -4px -4px 8px #FFFFFF,
+          4px 4px 8px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+      }
+
+      .menu-icon-settings {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 0.5rem;
+
+        // Different menu icon type
+        #profile {
+          border-radius: 50%;
+          background-color: $essoloRed;
+
+          .profile {
+            color: white;
+          }
+        }
+
+      }
+
+    }
+
+    .menu-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      padding: 1rem;
+
+
+      .submenu {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1rem;
+        border: none;
+        height: auto;
+        box-sizing: border-box;
+        column-gap: 1rem;
+        transition: background 2s ease-in 1s;
+        background: linear-gradient(111.69deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.025) 100.12%),
+          #FFFFFF;
+        box-shadow: -8px -8px 16px #FFFFFF,
+          8px 8px 16px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+        cursor: pointer;
+
+        &.active {
+          transition: background 0.2s ease-in 0.5s;
+          background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.1) 0.12%, rgba(0, 0, 0, 0.05) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+          box-shadow: 8px 8px 16px 0px #00000029 inset,
+            -8px -8px 16px 0px #FFFFFF inset;
+        }
+
+        .submenu-icon {
+          position: relative;
+          display: table-cell;
+          place-content: center;
+          height: 24px;
+          text-align: right;
+          font-size: 20px;
+          color: $essoloRed;
+          padding: 7px;
+          background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%),
+            #FFFFFF;
+          box-shadow: -4px -4px 8px #FFFFFF,
+            4px 4px 8px rgba(0, 0, 0, 0.16);
+          border-radius: 10px;
+
+          &.active {
+            background-color: $essoloRed;
+          }
+        }
+
+        .submenu-label {
+          margin: 0;
+          // height: 1rem;
+        }
+      }
+
+    }
+
+  }
+}

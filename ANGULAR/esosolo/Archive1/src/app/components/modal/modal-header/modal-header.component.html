@@ -1,0 +1,16 @@
+<div class="modal-header-wrapper">
+  <div [class]="modalHeaderContentClass">
+    <p class="cardTitle">{{ modalTitle }}</p>
+    <p [class]="modalSubtitleClass">{{ modalSubtitle }}</p>
+  </div>
+
+  <div class="modal-header-button">
+    <img
+      [hidden]="!showModalCloseButton"
+      (click)="closeModalByButton()"
+      class="cardIcon"
+      src="../../../../assets/icons/remix/line/system/close-line.svg"
+      alt=""
+    />
+  </div>
+</div>

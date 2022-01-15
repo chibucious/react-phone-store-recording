@@ -1,0 +1,20 @@
+<app-page-wrapper
+  pageMenuId="tickets"
+  (pageWrapperSelectedRoute)="pageWrapperRouteListener($event)"
+>
+  <app-view-tickets
+    *ngIf="selectedSubMenuRoute === '/dashboard/tickets/view'"
+  ></app-view-tickets>
+
+  <app-add-tickets
+    *ngIf="selectedSubMenuRoute === '/dashboard/tickets/add'"
+  ></app-add-tickets>
+
+  <app-overview-tickets
+    *ngIf="selectedSubMenuRoute === '/dashboard/tickets/overview'"
+  ></app-overview-tickets>
+
+  <app-viewmessage-tickets
+    *ngIf="selectedSubMenuRoute === '/dashboard/tickets/viewmessage'"
+  ></app-viewmessage-tickets>
+</app-page-wrapper>

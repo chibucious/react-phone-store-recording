@@ -1,0 +1,27 @@
+<app-modal-wrapper
+  [wrapperCanShowModal]="showModalBackground"
+  [wrapperCanCloseModalByBackDrop]="true"
+  [wrapperShowModalCloseButton]="true"
+  wrapperModalTitle="Verification"
+  wrapperModalSubtitle="Provide your prefered contact information to sent the OTP code"
+  [showModalFooter]="false"
+  (emitModalClosed)="resetModalBackDrop($event)"
+>
+  <app-form-row rowDisplay="column">
+    <app-form-input
+      formInputIcon="../../../../assets/icons/Iconly/Light/Message.svg"
+      iconAlignment="right"
+    >
+      <input
+        class="formInput"
+        type="email"
+        placeholder="Email address"
+        [formControl]="sendersContact"
+      />
+    </app-form-input>
+  </app-form-row>
+
+  <app-card-row rowDisplay="column">
+    <button (click)="sendOtpByEmail()" class="formButton">Send OTP</button>
+  </app-card-row>
+</app-modal-wrapper>

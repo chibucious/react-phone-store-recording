@@ -1,0 +1,254 @@
+@import '../../../../../../assets/styles/main.scss';
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  .content-section {
+
+    &.one {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      width: 100%;
+
+      .content-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        // min-width: 100%;
+        // min-height: 66px;
+        background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.05) 0.12%, rgba(0, 0, 0, 0.025) 100%),
+          #FFFFFF;
+        box-shadow: inset -4px -4px 8px #FFFFFF,
+          inset 4px 4px 8px rgba(0, 0, 0, 0.16);
+        border-radius: 10px;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          // min-height: 45px;
+
+          .content-info {
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.005em;
+            color: $silentBoldText;
+          }
+        }
+
+        .content-icon {
+          display: flex;
+          align-items: center;
+          // min-height: 45px;
+        }
+      }
+    }
+
+    &.two {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .table-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+
+        .table-content {
+          position: relative;
+          display: flex;
+          align-items: center;
+          min-width: 95.5px;
+          text-align: right;
+          font-size: 12px;
+          color: $silentBoldText;
+          padding: 9px;
+          column-gap: 0.5rem;
+          cursor: pointer;
+          text-align: left;
+          text-transform: uppercase;
+
+          &.checkbox,
+          &.company-status {
+            min-width: auto;
+            text-align: center;
+          }
+
+          &.document-name {
+            min-width: 300px;
+          }
+
+          &.upload-date {
+            min-width: 140px;
+          }
+
+          &.company-status {
+            display: flex;
+            justify-content: center;
+            min-width: 100px;
+          }
+
+          &.company-action {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-width: 150px;
+          }
+        }
+      }
+
+      .table-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+
+        .table-content {
+          position: relative;
+          display: flex;
+          align-items: center;
+          min-width: 95.5px;
+          text-align: right;
+          font-size: 14px;
+          color: $essoloBlack;
+          padding: 9px;
+          background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.08) 0.12%, rgba(0, 0, 0, 0.04) 100%),
+            #FFFFFF;
+          box-shadow: -4px -4px 8px #FFFFFF,
+            4px 4px 8px rgba(0, 0, 0, 0.16);
+          border-radius: 10px;
+          cursor: pointer;
+          text-align: left;
+
+          &.active {
+            background: linear-gradient(291.76deg, rgba(0, 0, 0, 0.05) 0.12%, rgba(0, 0, 0, 0.025) 100%),
+              #FFFFFF;
+            box-shadow: inset -4px -4px 8px #FFFFFF,
+              inset 4px 4px 8px rgba(0, 0, 0, 0.16);
+            border-radius: 10px;
+          }
+
+          &.checkbox,
+          &.company-status {
+            min-width: auto;
+            text-align: center;
+          }
+
+          &.document-name {
+            min-width: 300px;
+          }
+
+          &.upload-date {
+            min-width: 140px;
+          }
+
+          &.company-status {
+            display: flex;
+            justify-content: center;
+            min-width: 100px;
+          }
+
+          &.company-action {
+            justify-content: space-around;
+            min-width: 150px;
+          }
+        }
+      }
+
+      .pagination-section {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .pagination-sections-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          .pagination-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap: 1rem;
+            padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+
+            &.center {
+              justify-content: center;
+            }
+
+            &.end {
+              justify-content: flex-end;
+            }
+
+            .pagination-legend {
+              font-family: Poppins;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0.005em;
+              text-align: center;
+              color: $silentText;
+              margin: 0;
+            }
+
+            .pagination-title {
+              font-family: Poppins;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 22px;
+              letter-spacing: 0.005em;
+              text-align: center;
+              color: $essoloBlack;
+              margin: 0;
+            }
+
+            .pagination-icon {
+              cursor: pointer;
+            }
+
+            // Mobile Layout
+            @media only screen and (min-width: 320px) and (max-width: 740px) {
+
+              &.center,
+              &.end,
+              & {
+                justify-content: center;
+              }
+
+            }
+
+
+          }
+        }
+
+        // Mobile Layout
+        @media only screen and (min-width: 320px) and (max-width: 740px) {
+
+          &.list {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1rem;
+
+          }
+
+        }
+      }
+    }
+  }
+}

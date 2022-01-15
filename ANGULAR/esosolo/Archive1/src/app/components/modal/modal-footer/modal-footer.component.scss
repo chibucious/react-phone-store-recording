@@ -1,0 +1,34 @@
+ .modal-footer-wrapper {
+   display: flex;
+   width: 100%;
+
+   .modal-footer-content {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     row-gap: 0.5rem;
+     width: 100%;
+     height: 100%;
+
+     &.left {
+       align-items: flex-start;
+     }
+
+
+     .cardTitle,
+     .cardSubtitle {
+       margin: 0;
+     }
+
+     .cardTitle {
+       font-size: 1rem;
+     }
+
+     .cardSubitle {
+       .noShow {
+         display: none;
+       }
+     }
+   }
+
+ }

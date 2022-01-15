@@ -1,0 +1,16 @@
+.formRow {
+  display: grid;
+  width: 100%;
+  height: auto;
+
+  &.row {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+
+  &.column {
+    grid-template-rows: auto;
+    row-gap: 1rem;
+
+  }
+}

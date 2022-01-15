@@ -1,0 +1,21 @@
+<app-page-wrapper
+  pageMenuId="dashboards"
+  (pageWrapperSelectedRoute)="pageWrapperRouteListener($event)"
+>
+  <app-dashboards
+    *ngIf="selectedSubMenuRoute == '/dashboard/dashboards/overview'"
+  ></app-dashboards>
+
+  <app-compliance
+    *ngIf="selectedSubMenuRoute == '/dashboard/dashboards/compliance'"
+  >
+  </app-compliance>
+
+  <app-operations
+    *ngIf="selectedSubMenuRoute == '/dashboard/dashboards/operations'"
+  >
+  </app-operations>
+
+  <app-finance *ngIf="selectedSubMenuRoute == '/dashboard/dashboards/finance'">
+  </app-finance>
+</app-page-wrapper>

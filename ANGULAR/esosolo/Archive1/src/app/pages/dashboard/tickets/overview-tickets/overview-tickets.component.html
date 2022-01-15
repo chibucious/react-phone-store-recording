@@ -1,0 +1,169 @@
+<page-content-wrapper>
+  <page-section-wrapper display="column">
+
+    <!--//////////////////////////////////////// Base Content ///////////////////////////////////-->
+    <!-- Notification -->
+    <div class="overshadowed-layer essolored">
+        <img src="../../../../../assets/icons/Iconly/Two-tone/Info Square red.svg" alt="" width="16.96px"/>
+        All unattended tickets would be closed after 2 months in the pipeline
+    </div>
+    <!-- Notification -->
+    
+    <!-- Header -->
+    <section-header
+      >Overview
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        actionText="Show"
+        placeholder="This year"
+      >
+      </app-dropdown>
+    </section-header>
+    <!-- Header Ends -->
+
+    <!--/////////////////////// The Card Lists /////////////////////////////////-->
+    <div class="card-list">
+      <!-- Accept array to iterate data -->
+      <div *ngFor="let overviewTicket of overviewTicketsList" class="card-wrapper">
+        <app-card-wrapper>
+          <!-- Section A - Card Title -->
+          <app-card-row rowDisplay="row">
+            
+            <span [hidden]="!overviewTicketListIsLoading" class="wallet-title">
+              {{ overviewTicket.type }}
+            </span>
+          </app-card-row>
+
+          <!-- Section B - Card Amount -->
+          <app-card-row rowDisplay="row">
+
+            <span
+              [hidden]="!overviewTicketListIsLoading"
+              class="wallet-amount {{ overviewTicket?.class }}"
+              >{{ overviewTicket.metric }}
+            </span>
+          </app-card-row>
+
+          <!-- Section C - Card Percentage -->
+          <app-card-row [hidden]="overviewTicketListIsLoading" rowDisplay="row">
+             
+          </app-card-row>
+
+          <app-card-row [hidden]="!overviewTicketListIsLoading" rowDisplay="row">
+            <span
+              *ngIf="!overviewTicket.trend"
+              [class]="overviewTicketListIsLoading && 'wallet-trend down'"
+            >
+              <img
+                [hidden]="!overviewTicketListIsLoading"
+                src="../../../../../assets/icons/Iconly/Bold/Arrow - Down.svg"
+                alt=""
+              />
+              {{ overviewTicket.trendMetric }}
+            </span>
+
+            <span *ngIf="overviewTicket.trend" class="wallet-trend up"
+              ><img
+                [hidden]="!overviewTicketListIsLoading"
+                src="../../../../../assets/icons/Iconly/Bold/Arrow - Up.svg"
+                alt=""
+              />
+              {{ overviewTicket.trendMetric }}
+            </span>
+
+            <span>
+              <img class="card-icon" [src]="overviewTicket.icon" alt="" />
+            </span>
+
+          </app-card-row>
+        </app-card-wrapper>
+      </div>
+    </div>
+    <!--/////////////////////// The Card Lists Ends /////////////////////////////////-->
+
+
+    <!-- Header -->
+    <section-header>
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        placeholder="Stat"
+      >
+      </app-dropdown>
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        actionText="Show"
+        placeholder="Yearly"
+      >
+      </app-dropdown>
+    </section-header>
+    <!-- Header Ends -->
+
+    <!--/////////////////////// The Map /////////////////////////////////-->
+    <app-card-wrapper class="map-wrapper" display="row">
+      <!-- <img src="../../../../../assets/icons/custom-icons/companies-graph.svg" alt="" /> -->
+      <div style="width: 100%;overflow:auto;">
+        <canvas id="myChart"></canvas>
+      </div>
+    </app-card-wrapper>
+    <!--/////////////////////// The Map Ends ////////////////////////////-->
+
+
+
+    <!-- Header -->
+    <section-header>
+      Tickets Timeline
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        placeholder="This year"
+      >
+      </app-dropdown>
+    </section-header>
+    <!-- Header Ends -->
+
+    <!--/////////////////////// The GantChart /////////////////////////////////-->
+    <app-card-wrapper class="map-wrapper" display="row">
+      <img src="../../../../../assets/icons/custom-icons/ticket-gantchart.svg" alt="" />
+    </app-card-wrapper>
+    <!--/////////////////////// The GantChart Ends ////////////////////////////-->
+
+
+
+
+    <!-- Header -->
+    <section-header>
+      Location data
+
+      <app-dropdown
+        class="section-header-two break"
+        (selectedItem)="listenForChangeInMapDropdown($event)"
+        [dropdownList]="sampleDropdownList"
+        placeholder="This year"
+      >
+      </app-dropdown>
+    </section-header>
+    <!-- Header Ends -->
+
+    <!--/////////////////////// The Location Map /////////////////////////////////-->
+    <app-card-wrapper class="map-wrapper" display="row">
+      <img src="../../../../../assets/icons/custom-icons/TicketLocationmap.svg" alt="" />
+    </app-card-wrapper>
+    <!--/////////////////////// The Location Map Ends ////////////////////////////-->
+
+
+
+    <!--//////////////////////////////////////// Base Content Ends ///////////////////////////////////-->
+
+  </page-section-wrapper>
+</page-content-wrapper>

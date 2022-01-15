@@ -1,0 +1,62 @@
+<div class="topbar">
+  <div class="search-profile-bar">
+    <app-form-input
+      formInputIcon="../../../assets/icons/Iconly/Light-Outline/Search.svg"
+      iconAlignment="left"
+    >
+      <input
+        class="formInput"
+        type="text"
+        placeholder="Search"
+        [formControl]="searchbarInput"
+        (change)="(searchbarSubmitFunction)"
+      />
+    </app-form-input>
+
+    <span class="profile-icons-wrapper">
+      <img
+        class="profile-icon envelope"
+        src="../../../assets/icons/Iconly/Light-Outline/Message.green.svg"
+        alt=""
+      />
+      <img
+        class="profile-icon notification"
+        src="../../../assets/icons/Iconly/Light-Outline/Notification.svg"
+        alt=""
+      />
+
+      <span class="profile-img-wrapper">
+        <img
+          class="profile-icon profile-img"
+          src="../../../assets/icons/Iconly/Light-Outline/Profile.white.svg"
+          alt=""
+        />
+      </span>
+    </span>
+  </div>
+
+  <div class="mobile-topbar">
+    <span (click)="openMobileMenu()" class="menu-hamburger">
+      <img
+        class="profile-icon hamburger"
+        src="../../../assets/icons/custom-icons/hamburger-open.svg"
+      />
+    </span>
+
+    <span class="menu-logo">
+      <img
+        class="logo"
+        src="../../../assets/images/essolo-logo-expanded.svg"
+        alt=""
+      />
+    </span>
+
+    <span class="menu-search-bar-icon">
+      <img
+        class="profile-icon search-icon"
+        src="../../../assets/icons/Iconly/Light/Search.svg"
+        alt=""
+      />
+    </span>
+  </div>
+</div>

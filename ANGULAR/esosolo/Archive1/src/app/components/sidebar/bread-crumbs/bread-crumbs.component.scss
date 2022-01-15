@@ -1,0 +1,39 @@
+// Import default styles and theme colours
+@import "../../../../assets/styles/main.scss";
+
+
+.bread-crumbs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-transform: capitalize;
+
+
+  .parent-page {
+    display: flex;
+    align-items: center;
+    color: $silentText;
+    cursor: pointer;
+
+    &.active {
+      color: $essoloBlack;
+    }
+  }
+
+  .showNextIcon {
+    display: none;
+    position: relative;
+    align-items: center;
+
+    &.active {
+      display: flex;
+      color: $essoloBlack;
+    }
+
+    &:nth-last-child(1) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

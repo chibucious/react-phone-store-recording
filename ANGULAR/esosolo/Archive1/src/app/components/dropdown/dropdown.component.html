@@ -1,0 +1,60 @@
+<div class="dropdown-list">
+  <div class="dropdown">
+    <span class="action-text">
+      {{ actionText }}
+    </span>
+
+    <span class="placeholder">
+      {{ selectedItemLabel }}
+    </span>
+
+    <img
+      (click)="showDropDown()"
+      class="dropdown-icon"
+      src="../../../assets/icons/Iconly/Light/Arrow - Down 2.svg"
+    />
+  </div>
+
+  <div
+    id="customDropdownList"
+    class="dropdown_list {{ isOpen && 'show-dropdown' }}"
+  >
+    <div
+      *ngFor="let item of dropdownList"
+      class="dropdown-mobile {{ item.selected && 'active' }}"
+      (click)="selectDropdownItem(item)"
+    >
+      <div
+        [class]="
+          item.selected === true
+            ? 'selector-title_dropdown_list_single selected'
+            : 'selector-title_dropdown_list_single'
+        "
+      >
+        <div class="single-earning-detail">
+          <!-- <span class="time-box">
+            <div class="time-box_icon-wrapper">
+              <img [src]="item.icon" />
+            </div>
+          </span> -->
+          <span class="riders-box">
+            <p class="riders-box_value">
+              {{ item.label }}
+            </p>
+          </span>
+
+          <span class="cash-box">
+            <img
+              [class]="
+                item.selected === true
+                  ? 'cash-box_value success'
+                  : 'cash-box_value'
+              "
+              src="../../../assets/icons/Iconly/Bold/Tick Square.svg"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

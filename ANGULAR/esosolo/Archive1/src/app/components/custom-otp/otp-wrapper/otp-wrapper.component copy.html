@@ -1,0 +1,36 @@
+<app-select-otp
+  [hidden]="
+    showOtpComponent != true &&
+    (wrapperSelectedOTPMethod == 'email' ||
+      wrapperSelectedOTPMethod == 'phone' ||
+      wrapperSelectedOTPMethod == undefined)
+  "
+  (selectedOTPMethod)="showSelectedOTPMethod($event)"
+></app-select-otp>
+
+<app-sms-otp
+  [hidden]="wrapperSelectedOTPMethod != 'phone' && !showOTPConfirmation"
+  [OtpSMSMethodContact]="OtpWrapperSMSMethodContact"
+  [OtpSMSMethodEndpoint]="OtpWrapperSMSMethodEndpoint"
+  (confirmOTP)="showConfirmationTemplate($event)"
+  (emitUserMobileNumber)="updateUserMobileNumber($event)"
+  (emitUserIntCode)="updateUserIntCode($event)"
+></app-sms-otp>
+
+<app-email-otp
+  [hidden]="wrapperSelectedOTPMethod != 'email' && !showOTPConfirmation"
+  [OtpEmailMethodContact]="OtpWrapperEmailMethodContact"
+  [OtpEmailMethodEndpoint]="OtpWrapperEmailMethodEndpoint"
+  (confirmOTP)="showConfirmationTemplate($event)"
+  (emitUserEmail)="updateUserEmailAddress($event)"
+></app-email-otp>
+
+<app-otp-confirmation
+  [hidden]="!showOTPConfirmation"
+  [selectedOtpMethod]="wrapperSelectedOTPMethod"
+  [OtpEmailMethodContact]="OtpWrapperEmailMethodContact"
+  [OtpSMSMethodContact]="OtpWrapperSMSMethodContact"
+  [userIntcode]="wrapperUserIntcode"
+  [OtpEmailVerificationEndpoint]="OtpWrapperVerifyEmailEndpoint"
+  [OtpSMSVerificationEndpoint]="OtpWrapperVerifySMSEndpoint"
+></app-otp-confirmation>

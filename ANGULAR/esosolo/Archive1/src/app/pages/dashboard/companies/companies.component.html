@@ -1,0 +1,25 @@
+<app-page-wrapper
+  pageMenuId="companies"
+  (pageWrapperSelectedRoute)="pageWrapperRouteListener($event)"
+>
+  <app-overview-companies
+    *ngIf="selectedSubMenuRoute == '/dashboard/companies/overview'"
+  ></app-overview-companies>
+
+  <app-create
+    *ngIf="selectedSubMenuRoute == '/dashboard/companies/create'"
+  ></app-create>
+
+  <app-view
+    (componentSelectedRoute)="componentRouteListener($event)"
+    *ngIf="selectedSubMenuRoute == '/dashboard/companies/view'"
+  >
+  </app-view>
+
+  <app-single-company
+    [componentData]="selectedComponentData"
+    (closeChildPage)="componentRouteListener($event)"
+    *ngIf="selectedSubMenuRoute == selectedComponentView"
+  >
+  </app-single-company>
+</app-page-wrapper>

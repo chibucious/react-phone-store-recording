@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100&display=swap');
+
+@media only screen and (min-width: 550px){
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* *************** essolo background image **************** */
+.essoloimage{
+    margin: auto;
+    width: 90%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    position: absolute;
+}
+/* *************** essolo background image **************** */
+.container{
+width:100%;
+height: 400px;
+display: flex;
+align-items: center;
+margin-top: 25px;
+justify-content: center;
+flex-direction: column;
+/* background-color: white; */
+}
+
+/* ************** header information ********************* */
+.code-info{
+margin-top: 30px;
+width: 25%;
+height: 350px;
+display: flex;
+background-color: whitesmoke;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+border-radius: 15px;
+z-index: 2;
+box-shadow: rgba(223, 223, 226, 0.15) 0px 48px 100px 0px;
+}
+
+.code-info h5{
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+}
+
+.code-info p{
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-size: 10px;
+color: silver;
+}
+.code-info span{
+color: black;
+}
+
+.code-info .center{
+margin-left: 30px;
+font-size: 10;
+color:silver;
+
+}
+.code-info .red{
+margin-left: 2px;
+font-size: 10px;
+color:  #d62121;
+}
+/* ************** end of header information ********************* */
+
+/* ****************** OTP buttons ***************************** */
+.codebar{
+width: 55%;
+height: 50px;
+display: flex;
+/* background-color: violet; */
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+}
+
+.codebar input{
+width: 40px;
+height: 40px;
+border-radius: 100%;
+background-color: whitesmoke;
+align-items: center;
+justify-content: center;
+outline: none;
+display: flex;
+text-align: center;
+border: 0;
+border-radius: 42px;
+border-radius: 115px;
+background: #fafafa;
+box-shadow: inset 2px 2px 0px #cbcbcb,
+        inset -2px -2px 0px #ffffff;
+}
+/* ****************** OTP buttons ***************************** */
+
+/* ************ verification button (red btn) ***************** */
+.code-info button{
+display: flex;
+column-gap: 1rem;
+align-items: center;
+justify-content: center;
+margin-top: 10px;
+height: 40px;
+width: 70%;
+padding: 0.75rem 2rem 0.75rem 2rem;
+color: #fafafa;
+background-color: #8D1919;
+border: none;
+cursor: pointer;
+font-size: 10px;
+background: linear-gradient(180deg, rgba(211, 121, 121, 0.5) 0%, rgba(141, 25, 25, 0.5) 100%),
+#8D1919;
+box-shadow: -4px -4px 8px #FFFFFF,
+4px 4px 8px rgba(0, 0, 0, 0.16);
+border-radius: 24px; 
+}
+/* ************ verification button (red btn) ***************** */
+
+
+/*********************** white button section (try another way)**********/
+
+.white{
+width: 90%;
+height: 60px;
+display: flex;
+align-items: center;
+/* background-color: yellow; */
+flex-direction: row;
+justify-content: center;
+}
+.white button{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 42px;
+width: 70%;
+background-color:whitesmoke;
+background: whitesmoke;
+border: none;
+cursor: pointer;
+font-size: 10px;
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+box-shadow: -4px -4px 8px #FFFFFF,
+  4px 4px 8px rgba(0, 0, 0, 0.16);
+border-radius: 24px;
+color:silver;   
+}
+/************************* end of white button section (try another way)******** */
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                         ALL STYLES FOR MOBILE VIEW                         */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 500px) {
+
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    /* *************essolo background image************************ */
+    .essoloimage{
+        margin: auto;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        z-index: 1;
+        position: absolute;
+    }
+    /* ************* end of essolo background image************************ */
+    
+    
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .content{
+        width: 100%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: turquoise; */
+        margin-top: 60px;
+    }
+    /******************** OTP  heading information section******************* */
+    .code-info{
+        margin-top: 30px;
+        width: 95%;
+        height: 350px;
+        display: flex;
+        //  background-color: tan; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+       
+    }
+    
+    .code-info h5{
+        margin-top: 0;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+    }
+    
+    .code-info p{
+        margin-top: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-size: 12px;
+        color: silver;
+    }
+    
+    
+    .code-info .center{
+        font-size: 10px;
+        color:silver;
+        
+    }
+    
+    .code-info .red{
+        margin-left: 2px;
+        font-size: 10px;
+        color:  #d62121;
+    }
+    /************************* end of OTP heading information section******* */
+     
+    /************************** OTP button section****************** */
+    .codebar{
+        width: 70%;
+        height: 50px;
+        display: flex;
+        /* background-color: violet; */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    
+    .codebar input{
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        background-color: whitesmoke;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        display: flex;
+        text-align: center;
+        border: 0;
+        border-radius: 42px;
+        border-radius: 115px;
+        background: #fafafa;
+        box-shadow: inset 2px 2px 0px #cbcbcb,
+                inset -2px -2px 0px #ffffff;
+    }
+    /************************* end OTP button section ********************** */
+    
+    /*************************** red button section *********************** */
+    .code-info button{
+        display: flex;
+        column-gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        height: 42px;
+        width: 60%;
+        color: #fafafa;
+        background-color: #8D1919;
+        border: none;
+        cursor: pointer;
+        font-size: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        padding: 0.75rem 2rem 0.75rem 2rem;
+        background: linear-gradient(180deg, rgba(211, 121, 121, 0.5) 0%, rgba(141, 25, 25, 0.5) 100%),
+          #8D1919;
+        box-shadow: -4px -4px 8px #FFFFFF,
+          4px 4px 8px rgba(0, 0, 0, 0.16);
+        border-radius: 24px; 
+    }
+    /********************** end of red button section *****************************/
+    
+    /*********************** white button section (try another way)**********/
+    
+    .white{
+        width: 90%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        /* background-color: yellow; */
+        flex-direction: row;
+        justify-content: center;
+    }
+    .white button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 42px;
+        width: 60%;
+        background-color:whitesmoke;
+        background: whitesmoke;
+        border: none;
+        cursor: pointer;
+        font-size: 10px;
+        margin-top: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        box-shadow: -4px -4px 8px #FFFFFF,
+          4px 4px 8px rgba(0, 0, 0, 0.16);
+        border-radius: 24px;
+        color:silver;   
+        }
+    /************************* end of white button section (try another way)******** */
+
+
+}

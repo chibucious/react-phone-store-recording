@@ -1,0 +1,69 @@
+<app-modal-wrapper
+  [hidden]="showModalBackground == false"
+  [wrapperCanShowModal]="showModalBackground"
+  [wrapperCanCloseModalByBackDrop]="true"
+  [wrapperShowModalCloseButton]="true"
+  wrapperModalTitle="Verification"
+  wrapperModalSubtitle="Select which contact detail
+you can use to receive your OTP"
+  [showModalFooter]="false"
+  (emitModalClosed)="resetModalBackDrop($event)"
+>
+  <!-- <div class="modal-content-wrapper"> -->
+  <button
+    id="phone"
+    (click)="selectOtpMethod('phone')"
+    class="transaction-receiver-wrapper"
+  >
+    <app-card-row rowDisplay="column" id="wallet">
+      <div class="wallets_single">
+        <div class="single-earning-detail">
+          <span class="time-box">
+            <div class="time-box_icon-wrapper">
+              <img src="../../../../assets/icons/Iconly/Light/Call.svg" />
+            </div>
+          </span>
+          <span class="riders-box">
+            <span class="riders-box_value">via sms</span>
+            <p class="riders-box_legend">
+              **** *** {{ spliceSmsContact(smsContact) }}
+            </p>
+          </span>
+
+          <span class="cash-box"> </span>
+        </div>
+      </div>
+    </app-card-row>
+  </button>
+
+  <button
+    id="email"
+    (click)="selectOtpMethod('email')"
+    class="transaction-receiver-wrapper"
+  >
+    <app-card-row rowDisplay="column" id="wallet">
+      <div class="wallets_single">
+        <div class="single-earning-detail">
+          <span class="time-box">
+            <div class="time-box_icon-wrapper">
+              <img src="../../../../assets/icons/Iconly/Light/Message.svg" />
+            </div>
+          </span>
+          <span class="riders-box">
+            <span class="riders-box_value">via mail</span>
+            <p class="riders-box_legend">
+              ********{{ spliceEmailContact(emailContact) }}
+            </p>
+          </span>
+
+          <span class="cash-box"> </span>
+        </div>
+      </div>
+    </app-card-row>
+  </button>
+
+  <app-card-row rowDisplay="column">
+    <button (click)="showOTPMethod()" class="formButton">Proceed</button>
+  </app-card-row>
+  <!-- </div> -->
+</app-modal-wrapper>

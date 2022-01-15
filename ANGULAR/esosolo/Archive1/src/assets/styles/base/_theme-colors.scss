@@ -1,0 +1,20 @@
+// Default colors
+$essoloRed: #8D1919;
+$essoloBlack: #000000CC;
+$essoloWhite: #FFFFFF;
+$silentText: #00000066;
+$silentBoldText: #00000099;
+$essoloBodyColor: linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+#FFFFFF;
+
+// $essoloBodyColor: #f9f9f9;
+$insetColor3: #cfcccc67;
+$borderBottom: 1px solid $essoloWhite;
+
+$essoloRedShade: linear-gradient(0deg, rgba(255, 45, 45, 0.05), rgba(255, 45, 45, 0.05)),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+
+
+// Text Colors
+$successText: #2F8D00;
+$errorText: #FF0000;

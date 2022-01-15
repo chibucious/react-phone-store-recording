@@ -1,0 +1,11 @@
+<div class="tabs">
+  <div
+    *ngFor="let tab of tabsList"
+    [id]="tab.tabId"
+    class="tab {{ tab.selected && 'selected' }}"
+  >
+    <h4 class="tab-text">
+      {{ tab.tabText }}
+    </h4>
+  </div>
+</div>
