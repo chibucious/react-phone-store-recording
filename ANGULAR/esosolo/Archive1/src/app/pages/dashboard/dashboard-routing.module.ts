@@ -48,8 +48,8 @@ const routes: Routes = [
       { path: 'overview', component: TicketsComponent },
       { path: 'add', component: TicketsComponent },
       { path: 'view', component: TicketsComponent },
-      { path: 'viewmessage', component: TicketsComponent },
-      { path: '', redirectTo: 'overiew', pathMatch: 'full' },
+      { path: 'single-ticket', component: TicketsComponent },
+      { path: '', redirectTo: 'overview', pathMatch: 'full' },
     ],
   },
   {

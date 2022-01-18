@@ -7,7 +7,8 @@ import {
 } from './view-tickets.types';
 
 
-import {Router} from '@angular/router'; // import router from angular router
+// import {Router} from '@angular/router'; 
+// import router from angular router
 
 @Component({
   selector: 'app-view-tickets',
@@ -31,7 +32,7 @@ export class ViewTicketsComponent implements OnInit {
   // Page cards styling
   isGrid: boolean = false;
 
-  constructor(private route:Router) { }
+  constructor(private formatting: GeneralFormattingService) { }
 
   ngOnInit(): void {
 
@@ -137,6 +138,10 @@ export class ViewTicketsComponent implements OnInit {
 
   }
 
+  toogleMenuState(state: boolean) {
+    this.isGrid = state;
+  }
+
   selectTicketholder(ticketholder: TicketUsersInterface) {
     this.componentSelectedRoute.emit({
       route: `/dashboard/tickets/view-tickets/${ticketholder.name}`,
@@ -145,15 +150,28 @@ export class ViewTicketsComponent implements OnInit {
   }
 
   
-  selectTicket(id: any) {
-    // alert(id);
-    this.route.navigate(['dashboard/tickets/viewmessage']); // navigate to other page
+  
+  // selectTicket(id: any) {
+  //   // alert(id);
+  //   this.route.navigate(['dashboard/tickets/viewmessage']); // navigate to other page
     
      
+  // }
+
+   // Listen for selected dropdown items
+   listenForChangeInDurationDropdown(item: any) {
+    console.log('selected item from duration dropdown: ', item);
   }
 
-  toogleMenuState(state: boolean) {
-    this.isGrid = state;
+  // Listen for selected dropdown items
+  closeSubChildPage(isClose: boolean) {
+    isClose &&
+      this.componentSelectedRoute.emit({
+        route: '/dashboard/tickets/view-tickets',
+        data: {},
+      });
   }
+
+  
 
 }

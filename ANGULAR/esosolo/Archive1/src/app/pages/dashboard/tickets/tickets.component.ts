@@ -12,6 +12,9 @@ export class TicketsComponent implements OnInit {
   // The sub component selected
   selectedComponentView!: string;
 
+  // The data of a selected sub component
+  selectedComponentData!: any;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -22,6 +25,26 @@ export class TicketsComponent implements OnInit {
    */
   pageWrapperRouteListener(route: string | any) {
     if (typeof route == 'string') this.selectedSubMenuRoute = route;
+  }
+  
+  /**
+   * Listen for changes in selected submenu route and update the page view
+   * @param route - changed subment route
+   */
+  componentRouteListener(response: {
+    route: string;
+    data: any;
+    closeSubPage?: boolean;
+  }) {
+    if (response !== undefined) {
+      if (response.closeSubPage == undefined) {
+        this.selectedComponentData = response.data;
+
+        this.selectedComponentView = response.route;
+      }
+
+      this.selectedSubMenuRoute = response.route;
+    }
   }
   
 }

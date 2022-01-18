@@ -242,4 +242,6 @@ export class ViewComponent implements OnInit {
         data: {},
       });
   }
+
+  
 }

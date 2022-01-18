@@ -52,11 +52,14 @@
   }
 
   // Input icon styles
-  .formInputIcon {
+  
+  .formInputIcon, .textareaIcon {
     height: 24px;
     width: 24px;
 
     opacity: 0.4;
+
+    
 
     &.bold {
       opacity: 1;
@@ -95,6 +98,12 @@
         margin-left: 0.5rem;
       }
     }
+  }
+
+  .textareaIcon{
+    opacity: 1;
+    width: auto;
+    height: auto;
   }
 
 

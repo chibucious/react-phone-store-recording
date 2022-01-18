@@ -1,0 +1,149 @@
+<page-content-wrapper>
+    <page-section-wrapper display="column">
+        <!-- Header Section containing search, menu and ada ticket btn -->
+        <section-header>
+            <div class="company-navigation">
+                <div (click)="closePage()" class="navigation">
+                <img src="../../../../../assets/icons/Iconly/Light/Arrow - Left.svg" />
+                #{{ componentData?.userid }}
+                </div>
+            </div>
+
+            <div class="section-content-two">
+                <span class="section-menu-wrapper">
+                <div
+                    (click)="toogleMenuState(false)"
+                    class="menu-icon1 {{ !isGrid && 'active' }}"
+                >
+                    <img
+                    class=""
+                    src="../../../../../assets/icons/custom-icons/Play.svg"
+                    />
+                </div>
+
+                <div
+                    (click)="toogleMenuState(true)"
+                    class="menu-icon1 {{ isGrid && 'active' }}"
+                >
+                    <img
+                    class=""
+                    src="../../../../../assets/icons/custom-icons/Close Square.svg"
+                    />
+                </div>
+                </span>
+            </div>
+        
+            
+        
+            <!-- <app-tabs
+                [tabsList]="ticketTabsList"
+                (tabSelected)="updateTabSection($event)"
+            ></app-tabs>
+            <app-tab-section>
+
+               
+        
+                <app-kyb
+                [@showTabSection]="selectedTab == '2' ? 'show' : 'hide'"
+                *ngIf="selectedTab == '2'"
+                ></app-kyb>
+            
+                
+            </app-tab-section> -->
+        </section-header>
+
+        <!-- Contents -->
+        <div class="">
+            Status of airtime top-up still pending. Have already been debited.
+        </div>
+
+        <div class="messageitems">
+            <span>{{ componentData?.name }}</span> &nbsp;&nbsp;
+            <span class="lightash-color">
+                <img class="" src="../../../../../assets/icons/custom-icons/Ellipse 23.svg"/> &nbsp;&nbsp;
+                <!-- Mar 20, 2019 23:14 -->{{ componentData?.activity }}  &nbsp;&nbsp; 
+            </span>
+            <span class="lightash-color">
+                <img class="" src="../../../../../assets/icons/custom-icons/Ellipse 23.svg"/> &nbsp;&nbsp;
+                <span class="ash-border">Help and Support</span> &nbsp;&nbsp;
+                <img class="" src="../../../../../assets/icons/custom-icons/Ellipse 23.svg"/> &nbsp;&nbsp;
+            </span>
+            <span style="color:red;">Open for 25 days</span>
+        </div>
+
+
+        <!-- Messages Sender and Receiver -->
+        <!-- Admin message -->
+        <div class="overshadowed-layer messagecontents">
+            <div class="displayinline-spacebetween">
+                <div class="displayinlineFlex">
+                    <span class="user-img" style="margin-right:17px;">
+                        <img src="../../../../../../assets/icons/custom-icons/user-img.png" />
+                    </span>
+                    <span>
+                        {{ componentData?.name }} <br/>
+                        <span class="lightash-color">santhony@essolo.com</span>
+                    </span>
+                </div>
+                <div class="lightash-color">
+                    Mar 21, 2019 04:15
+                </div>
+            </div>
+
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus viverra habitasse nibh habitasse facilisis nunc amet, urna. Vel lectus ipsum leo.
+            </div>
+            
+        </div>
+        <!-- Admin message -->
+
+        <!-- User message -->
+        <div class="overshadowed-layer messagecontents">
+            <div class="displayinline-spacebetween">
+                <div class="displayinlineFlex">
+                    <span class="user-img" style="margin-right:17px;">
+                        <img src="../../../../../../assets/icons/custom-icons/user-img.png" />
+                    </span>
+                    <span>
+                        Jessica Wong <br/>
+                        <span class="lightash-color">wjessica@gmail.com</span>
+                    </span>
+                </div>
+                <div class="lightash-color">
+                    Mar 21, 2019 04:15
+                </div>
+            </div>
+
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit viverra pretium tortor nunc tincidunt. Tellus pharetra molestie accumsan elementum id eget egestas nisi pellentesque. Pellentesque feugiat sit morbi et. Tincidunt sollicitudin ultricies elementum id sed netus. Hac auctor id pellentesque enim malesuada neque quis.
+
+                <br/><br/>
+                Regards,<br/>
+                Jessica H. Wong,<br/>
+                +92100420401
+            </div>
+            
+        </div>
+        <!-- User message -->
+        <!-- Messages Sender and Receiver -->
+
+        <!-- Input box with send button -->
+        <app-form-input
+            formInputIcon="../../../assets/icons/custom-icons/redSendButton.svg" width="200px"
+            iconAlignment="right"
+        >
+        <textarea
+            class="formInput"
+            type="text"
+            placeholder="Type in your message"
+            style="position: relative;"
+        ></textarea>
+        <button class="" width="100px" style="position: absolute; right: 15px; top: 5px"></button>
+        </app-form-input>
+        <!-- Input box with send button -->
+
+        <!-- Contents -->
+
+    </page-section-wrapper>
+</page-content-wrapper>
+      
